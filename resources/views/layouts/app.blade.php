@@ -39,6 +39,10 @@
                             <a class="nav-link {{ Route::currentRouteNamed('turno.index') ? 'active' : '' }}"
                                 href="{{ route('turno.index') }}">Turnos</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ Route::currentRouteNamed('adicionales.index') ? 'active' : '' }}"
+                                href="{{ route('adicionales.index') }}">Adicionales</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
