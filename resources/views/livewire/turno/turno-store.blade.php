@@ -11,7 +11,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
-            <a href="{{ route('categoria.index') }}" class="btn btn-primary mb-3">Volver</a>
+            <a href="{{ route('turno.index') }}" class="btn btn-primary mb-3">Volver</a>
             <div class="card">
                 <div class="card-header">{{ __('Crear equipo') }}</div>
                 <div class="card-body">

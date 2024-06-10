@@ -5,6 +5,8 @@ use App\Livewire\Adicionales\AdicionalesStore;
 use App\Livewire\Categoria\CategoriaIndex;
 use App\Livewire\Categoria\CategoriaStore;
 use App\Livewire\Home;
+use App\Livewire\Personal\PersonalIndex;
+use App\Livewire\Personal\PersonalStore;
 use App\Livewire\Turno\TurnoIndex;
 use App\Livewire\Turno\TurnoStore;
 use Illuminate\Support\Facades\Route;
@@ -25,4 +27,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('adicionales', AdicionalesIndex::class)->name('adicionales.index');
     Route::get('adicionales/crear/{adicionales?}', AdicionalesStore::class)->name('adicionales.create');
+
+    Route::get('personal',PersonalIndex::class)->name('personal.index');
+    Route::get('personal/crear/{personal?}',PersonalStore::class)->name('personal.create');
+
 });

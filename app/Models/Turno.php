@@ -19,4 +19,14 @@ class Turno extends Model
     {
         return $this->belongsTo(Categoria::class);
     }
+
+    /**
+     * Get all of the personales for the Turno
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function personales()
+    {
+        return $this->hasMany(Personal::class);
+    }
 }

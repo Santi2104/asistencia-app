@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('personal', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('turno_id');
+            $table->foreign('turno_id')->references('id')->on('turnos');
             $table->string('dni')->unique();
             $table->string('nombre');
             $table->string('apellido');
             $table->date('fecha_nacimiento');
-            $table->string('edad')->nullable();
             $table->string('foto')->nullable();
             $table->timestamps();
         });

@@ -43,6 +43,10 @@
                             <a class="nav-link {{ Route::currentRouteNamed('adicionales.index') ? 'active' : '' }}"
                                 href="{{ route('adicionales.index') }}">Adicionales</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ Route::currentRouteNamed('personal.index') ? 'active' : '' }}"
+                                href="{{ route('personal.index') }}">Personal</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
