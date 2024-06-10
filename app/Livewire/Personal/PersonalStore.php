@@ -70,7 +70,6 @@ class PersonalStore extends Component
             'turno_id' => $this->turnoId,
             'adicionales_id' => $this->adicionalesId
         ]);
-        DB::commit();
         return redirect()->route('personal.index')->with('status', 'Personal cargado correctamente');
     }
 }

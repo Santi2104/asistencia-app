@@ -13,10 +13,10 @@
             @endif
             <a href="{{ route('personal.index') }}" class="btn btn-primary mb-3">Volver</a>
             <div class="card">
-                <div class="card-header">{{ __('Crear personal') }}</div>
+                <div class="card-header">{{ __('Editar personal') }}</div>
 
                 <div class="card-body">
-                    <form wire:submit.prevent="store">
+                    <form wire:submit.prevent="update">
                         <div class="row">
                             <div class="col">
                                 <div class="mb-3">
@@ -66,7 +66,7 @@
                                 <label for="tipo_socio" class="form-label">Seleccione la categoria</label>
                                 <select class="form-select" name="categoria" id="categoria"
                                     wire:model.live="categoriaId">
-                                    <option selected>Seleccione uno</option>
+                                    <option selected>{{ $personal->turno->categoria->nombre }}</option>
                                     @foreach ($categorias as $categoria)
                                         <option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>
                                     @endforeach
@@ -78,7 +78,7 @@
                             <div class="col-6 mb-3">
                                 <label for="tipo_socio" class="form-label">Seleccione el turno</label>
                                 <select class="form-select" name="turno" id="turno" wire:model="turnoId">
-                                    <option selected>Seleccione uno</option>
+                                    <option selected>{{ $personal->turno->nombre }}</option>
                                     @foreach ($turnos as $turno)
                                         <option value="{{ $turno->id }}">{{ $turno->nombre }}</option>
                                     @endforeach
@@ -105,14 +105,26 @@
                             <div class="col-6 mb-3">
                                 <label for="" class="form-label">Elija una foto</label>
                                 <input type="file" class="form-control" name="foto" aria-describedby="fileHelpId"
-                                    wire:model.defer="foto">
+                                    wire:model="foto" wire:loading.attr="disabled" accept="image/*>
                                 @error('foto')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
+                            <div class="mb-3">
+                                @if ($personal->foto)
+                                    <img width="200" height="200" src="{{ Storage::url($personal->foto) }}"
+                                        alt="foto">
+                                @else
+                                    <img width="200" height="200" src="{{ url('/') }}/image/avatar.jpg"
+                                        alt="foto no encontrada">
+                                @endif
+                            </div>
                         </div>
                         <button type="submit" class="btn btn-info">Guardar</button>
-                    </form>
+                        </form>
+                    @if ($personal->foto)
+                        <button type="submit" class="btn btn-warning mt-3" wire:click="borrarFoto">Eliminar foto</button>
+                    @endif
                 </div>
             </div>
         </div>

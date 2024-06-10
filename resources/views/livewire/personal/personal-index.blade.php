@@ -38,10 +38,10 @@
                                             <td>{{ $perso->turno->categoria->nombre }}</td>
                                             <td>{{ $perso->turno->nombre }}</td>
                                             <td>{{ $perso->adicional->nombre }}</td>
-                                            {{-- <td><a href="{{ route('categoria.create', $categoria->id) }}" class="btn btn-primary">
+                                            <td><a href="{{ route('personal.edit', $perso->id) }}" class="btn btn-primary">
                                                     Editar
                                                 </a>
-                                            </td> --}}
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
