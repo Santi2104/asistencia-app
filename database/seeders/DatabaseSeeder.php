@@ -17,11 +17,12 @@ class DatabaseSeeder extends Seeder
         $this->call(CategoriaSeeder::class);
         $this->call(TurnosSeeder::class);
         $this->call(AdicionalesSeeder::class);
+        $this->call(AsistenciaTipoSeeder::class);
         Personal::factory(50)->create();
 
         User::factory()->create([
             'name' => 'Test User',
-            'email' => 'test@example.com',
+            'email' => 'test@mail.com',
         ]);
     }
 }

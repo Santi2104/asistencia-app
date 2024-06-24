@@ -58,4 +58,14 @@ class Personal extends Model
     {
         return $this->belongsTo(Adicional::class, 'adicionales_id');
     }
+
+    /**
+     * Get all of the asistencias for the Personal
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function asistencias()
+    {
+        return $this->hasMany(Asistencia::class);
+    }
 }
