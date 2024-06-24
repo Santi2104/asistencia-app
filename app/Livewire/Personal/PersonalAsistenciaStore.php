@@ -32,6 +32,7 @@ class PersonalAsistenciaStore extends Component
     public function resetForm()
     {
         $this->personal = null;
+        $this->reset('asistenciaTiposId', 'observaciones');
     }
 
     public function store()
