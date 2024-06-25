@@ -32,7 +32,10 @@
                                             <th>{{ $turno->categoria->nombre }}</th>
                                             <td>{{ $turno->created_at }}</td>
                                             <td>{{ $turno->updated_at }}</td>
-                                            <td><a href="{{ route('turno.create', $turno->id) }}" class="btn btn-primary">
+                                            <td><a href="{{ route('turno.show.personal', $turno->id) }}" class="btn btn-warning">
+                                                    Ver todo
+                                                </a>
+                                                <a href="{{ route('turno.create', $turno->id) }}" class="btn btn-primary">
                                                     Editar
                                                 </a>
                                             </td>

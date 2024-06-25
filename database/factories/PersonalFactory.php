@@ -23,6 +23,8 @@ class PersonalFactory extends Factory
             'fecha_nacimiento' => $this->faker->date(),
             'turno_id' => $this->faker->numberBetween(1,3),
             'adicionales_id' => $this->faker->numberBetween(1,2),
+            'situacion_id' => $this->faker->numberBetween(1,4),
+            'legajo' => $this->faker->numberBetween(1000,10000),
         ];
     }
 }

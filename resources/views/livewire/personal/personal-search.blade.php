@@ -20,7 +20,7 @@
     </div>
     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
         <button class="btn btn-primary" wire:click="buscar" wire:loading.attr="disabled">Buscar</button>
-        <button class="btn btn-outline-info" wire:click="limpiar">Limpiar
+        <button class="btn btn-outline-secondary" wire:click="limpiar">Limpiar
             formulario</button>
     </div>
 </div>

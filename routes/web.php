@@ -2,6 +2,7 @@
 
 use App\Livewire\Adicionales\AdicionalesIndex;
 use App\Livewire\Adicionales\AdicionalesStore;
+use App\Livewire\Asistencia\ShowAsistenciaPersonal;
 use App\Livewire\Categoria\CategoriaIndex;
 use App\Livewire\Categoria\CategoriaStore;
 use App\Livewire\Home;
@@ -9,6 +10,7 @@ use App\Livewire\Personal\PersonalEdit;
 use App\Livewire\Personal\PersonalIndex;
 use App\Livewire\Personal\PersonalStore;
 use App\Livewire\Turno\TurnoIndex;
+use App\Livewire\Turno\TurnoPersonalshow;
 use App\Livewire\Turno\TurnoStore;
 use Illuminate\Support\Facades\Route;
 
@@ -25,6 +27,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('turnos',TurnoIndex::class)->name('turno.index');
     Route::get('turnos/crear/{turno?}',TurnoStore::class)->name('turno.create');
+    Route::get('turnos/{turno}/personal',TurnoPersonalshow::class)->name('turno.show.personal');
 
     Route::get('adicionales', AdicionalesIndex::class)->name('adicionales.index');
     Route::get('adicionales/crear/{adicionales?}', AdicionalesStore::class)->name('adicionales.create');
@@ -32,5 +35,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('personal',PersonalIndex::class)->name('personal.index');
     Route::get('personal/crear',PersonalStore::class)->name('personal.create');
     Route::get('personal/edit/{personal}',PersonalEdit::class)->name('personal.edit');
+
+    Route::get('asistencias/{personal}',ShowAsistenciaPersonal::class)->name('personal.asistencia.show');
 
 });

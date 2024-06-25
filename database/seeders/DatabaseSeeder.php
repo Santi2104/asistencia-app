@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call(TurnosSeeder::class);
         $this->call(AdicionalesSeeder::class);
         $this->call(AsistenciaTipoSeeder::class);
+        $this->call(SituacionesSeeder::class);
         Personal::factory(50)->create();
 
         User::factory()->create([
