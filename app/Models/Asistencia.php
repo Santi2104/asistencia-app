@@ -24,4 +24,14 @@ class Asistencia extends Model
     {
         return $this->belongsTo(AsistenciaTipo::class);
     }
+
+    /**
+     * Get the personal that owns the Asistencia
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function personal()
+    {
+        return $this->belongsTo(Personal::class, 'personal_id');
+    }
 }

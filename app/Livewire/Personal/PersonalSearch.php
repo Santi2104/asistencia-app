@@ -30,6 +30,15 @@ class PersonalSearch extends Component
             session()->flash('warning', 'No se encontro un personal con el dni enviado');
             return;
         }
+
+        $duplicado = $this->resultado->asistencias()->whereDate('created_at', now()->format('Y-m-d'))->first();
+
+        if($duplicado != null)
+        {
+            $this->dispatch('personal-duplicado', personal: $duplicado)->to(PersonalError::class);
+            return;
+        }
+
         $this->dispatch('personal-encontrado', personal: $this->resultado);
 
     }

@@ -49,7 +49,7 @@
                                             @endforeach
                                         </select>
                                         @error('asistenciaTiposId')
-                                        <span class="text-danger">{{ $message }}</span>
+                                            <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
                                 </div>
@@ -57,15 +57,14 @@
                                     <div class="col">
                                         <div class="mb-2">
                                             <label class="form-label fw-bold">Observaciones</label>
-                                            <textarea class="form-control" id="observaciones"
-                                                name="observaciones" wire:model.defer="observaciones" rows="3"></textarea>
+                                            <textarea class="form-control" id="observaciones" name="observaciones" wire:model.defer="observaciones" rows="3"></textarea>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row"></div>
-                                    <div class="col">
-                                        <button class="btn btn-primary" wire:click="store">Guardar</button>
-                                    </div>
+                                <div class="col">
+                                    <button class="btn btn-primary" wire:click="store" wire:loading.attr="disabled"
+                                        wire:confirm="¿Está seguro de guardar esta asistencia?">Guardar</button>
                                 </div>
                             </div>
                         </div>
@@ -73,6 +72,7 @@
                 </div>
             </div>
         </div>
+</div>
 </div>
 </div>
 @endif
