@@ -35,7 +35,7 @@ class PersonalSearch extends Component
 
         if($duplicado != null)
         {
-            $this->dispatch('personal-duplicado', personal: $duplicado)->to(PersonalError::class);
+            $this->dispatch('personal-duplicado', $duplicado->personal_id)->to(PersonalError::class);
             return;
         }
 

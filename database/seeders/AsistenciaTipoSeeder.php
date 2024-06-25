@@ -17,7 +17,7 @@ class AsistenciaTipoSeeder extends Seeder
         ]);
 
         \App\Models\AsistenciaTipo::create([
-            'nombre' => 'permisio',
+            'nombre' => 'permiso',
         ]);
 
         \App\Models\AsistenciaTipo::create([

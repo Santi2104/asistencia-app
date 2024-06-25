@@ -129,4 +129,9 @@
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col">
+            <livewire:personal.personal-asistencia-index :personal="$personal" />
+        </div>
+    </div>
 </div>

@@ -22,7 +22,7 @@ class Asistencia extends Model
      */
     public function asistenciaTipo()
     {
-        return $this->belongsTo(AsistenciaTipo::class);
+        return $this->belongsTo(AsistenciaTipo::class, 'tipo_asistencia_id');
     }
 
     /**
